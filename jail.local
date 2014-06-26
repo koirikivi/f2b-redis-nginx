@@ -1,0 +1,17 @@
+# vim: set syntax=conf:
+# Example jail configuration that parses an nginx log and uses the redis jail
+# to ban them. Alter to suit your needs.
+
+[nginx-redis]
+enabled = true
+banaction = redis
+
+filter  = nginx-http-auth
+port    = http,https
+logpath = /var/log/nginx/error.log
+# NB: comment-out the above three lines and uncomment the following four
+# to quickly test with failed SSH attempts
+#filter  = sshd
+#port    = ssh
+#logpath  = /var/log/auth.log
+#maxretry = 1
