@@ -9,7 +9,7 @@ This is a proof of concept of a setup where fail2ban updates a list of IPs to
 redis and nginx uses that list to block requests.
 
 redis.conf includes the fail2ban action for updating the IPs in redis.
-By default, it stores them in  a redis set named fail2ban-<my-jail-name>.
+By default, it stores them in  a redis set named fail2ban-*my-jail-name*.
 
 jail.local contains an example configuration of a jail that uses the action.
 Alter as you see fit.
